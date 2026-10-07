@@ -1,0 +1,127 @@
+/* ---------- Colors (yahan se theme change karo) ---------- */
+:root {
+  --dark: #0f4c5c;
+  --light-bg: #f6f1e7;
+  --accent: #e09f3e;
+  --text: #25313a;
+}
+
+/* ---------- Basic page ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--light-bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ---------- Header ---------- */
+.top {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 50px 20px 40px;
+  border-bottom: 6px solid var(--accent);
+}
+.top.small { padding: 30px 20px; }
+.top h1 { margin: 0; font-size: 2.6rem; letter-spacing: 1px; }
+.top.small h1 { font-size: 1.8rem; }
+.top .id {
+  display: inline-block;
+  margin: 15px 0 5px;
+  padding: 6px 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 1.05rem;
+}
+.top .sub { margin: 8px 0 0; font-style: italic; opacity: 0.85; }
+
+/* ---------- Main white card ---------- */
+.card {
+  max-width: 800px;
+  margin: -20px auto 40px;
+  padding: 30px 35px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+.card h2 {
+  color: var(--dark);
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+.card h2:first-child { margin-top: 0; }
+.intro { text-align: center; font-style: italic; }
+
+/* ---------- Table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin-top: 15px;
+}
+th {
+  background: var(--dark);
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+td { padding: 12px; border-bottom: 1px solid #e3ddd0; }
+tr:nth-child(even) td { background: #faf6ee; }
+tr:hover td { background: #fdecc8; }
+
+.view {
+  display: inline-block;
+  padding: 5px 16px;
+  background: var(--accent);
+  color: #3b2a05;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.view:hover { background: var(--dark); color: white; }
+
+/* ---------- Lecture page ---------- */
+.topics > li { font-weight: bold; margin-top: 8px; }
+.topics ul li { font-weight: normal; }
+
+pre {
+  background: #1e2a30;
+  color: #f1e9d2;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+.output {
+  border: 2px dashed var(--accent);
+  border-radius: 8px;
+  padding: 15px;
+  background: #fffdf8;
+}
+
+/* ---------- Bottom navigation ---------- */
+.nav {
+  margin-top: 35px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.nav a { color: var(--dark); font-weight: bold; text-decoration: none; margin: 0 8px; }
+.nav a:hover { color: var(--accent); text-decoration: underline; }
+
+footer { text-align: center; padding: 20px; font-size: 0.9rem; opacity: 0.7; }
+
+/* ---------- Mobile screens ---------- */
+@media (max-width: 600px) {
+  .top h1 { font-size: 1.8rem; }
+  .card { margin: -15px 12px 30px; padding: 20px; }
+  th, td { padding: 8px; font-size: 0.9rem; }
+}
