@@ -9,22 +9,151 @@
 <body>
   <header class="top small">
     <h1>Lecture 3: HTML Document Structure and Elements</h1>
+    <p class="sub">The building blocks of a web page</p>
   </header>
 
   <main class="card">
     <h2>Summary</h2>
-    <p>This lecture covers the structure of an HTML document, including elements, tags and attributes. It also covers text, links, images, tables, lists and new HTML5 features.</p>
+    <p>This lecture covers the role of markup and the structure of an HTML document. It explains elements, tags, attributes, nesting and validation, then headings, paragraphs, text formatting, hyperlinks, images, media, lists and tables, and finally the new elements and features of HTML5 with browser support.</p>
 
-    <h2>Topics Covered</h2>
+    <h2>Role of Markup</h2>
+    <p>HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. The "hyper" in hypertext refers to hyperlinks, where you click on text or an image to jump to another web page.</p>
     <ul>
-      <li>Role of markup</li>
-      <li>DOCTYPE, head, body</li>
-      <li>Elements, tags, attributes, nesting</li>
-      <li>Headings, paragraphs, text formatting</li>
-      <li>Hyperlinks: absolute vs relative</li>
-      <li>Images, media, tables and lists</li>
-      <li>HTML5 new elements and browser support</li>
+      <li>A markup language "marks up" a document by surrounding parts of its content with tags.</li>
+      <li>Tags are enclosed in angle brackets (&lt; &gt;) and usually come in pairs (opening and closing).</li>
+      <li>Markup is not a programming language. It does not run logic or math, it only tells the browser what the content is.</li>
     </ul>
+    <table>
+      <tr><th>Technology</th><th>Role</th></tr>
+      <tr><td>HTML</td><td>Structure (the skeleton, gives meaning)</td></tr>
+      <tr><td>CSS</td><td>Presentation (colour, spacing, layout, typography)</td></tr>
+      <tr><td>JavaScript</td><td>Behaviour (validation, menus, dynamic updates)</td></tr>
+    </table>
+
+    <h2>HTML Document Structure</h2>
+    <p>A web page has a predictable structure:</p>
+    <ul>
+      <li><b>DOCTYPE:</b> tells the browser it is an HTML5 document.</li>
+      <li><b>head:</b> information about the page (title, meta tags, CSS links).</li>
+      <li><b>body:</b> everything that is visible on the page.</li>
+    </ul>
+    <p>The browser builds a <b>Document Object Model (DOM)</b>, a tree of all the elements of the page.</p>
+
+    <h2>Tag, Element and Attribute</h2>
+    <table>
+      <tr><th>Term</th><th>Meaning</th><th>Example</th></tr>
+      <tr><td>Tag</td><td>The markup pieces</td><td><code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code></td></tr>
+      <tr><td>Element</td><td>The complete unit</td><td><code>&lt;p&gt;Hello&lt;/p&gt;</code></td></tr>
+      <tr><td>Attribute</td><td>Extra information in a tag</td><td><code>href="..."</code>, <code>class="..."</code></td></tr>
+    </table>
+
+    <h2>Nesting</h2>
+    <p>HTML elements form a tree. Close elements in reverse order: the last opened is the first closed.</p>
+    <p><b>Correct nesting:</b> <code>&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;&lt;/p&gt;</code></p>
+    <p><b>Wrong nesting:</b> <code>&lt;p&gt;&lt;strong&gt;Important&lt;/p&gt;&lt;/strong&gt;</code></p>
+
+    <h2>HTML Document Validation</h2>
+    <p>An HTML validator is a tool that checks the syntax of HTML documents and makes sure they follow W3C standards. Tools: W3C Markup Validator and Nu HTML Checker.</p>
+    <h3>Importance of Validation</h3>
+    <ul>
+      <li>Ensures the code works across browsers.</li>
+      <li>Finds errors so they can be fixed early.</li>
+      <li>Gives accessibility compliance (important for users with disabilities).</li>
+      <li>Guarantees proper structure and better SEO ranking.</li>
+    </ul>
+    <h3>How to Use a Validator</h3>
+    <ol>
+      <li>Visit a tool like the W3C Validator (validator.w3.org).</li>
+      <li>Upload your HTML file or paste your code.</li>
+      <li>The tool highlights errors and suggests corrections, for example missing closing tags or invalid attributes.</li>
+    </ol>
+
+    <h2>Headings and Paragraphs</h2>
+    <p>Headings <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> create a content hierarchy. Paragraphs use <code>&lt;p&gt;</code>.</p>
+    <p class="tip">Best practice: use h1 to h6 to describe hierarchy, and use CSS to make text look larger or smaller.</p>
+
+    <h2>Text Formatting</h2>
+    <table>
+      <tr><th>Tag</th><th>Meaning</th></tr>
+      <tr><td><code>&lt;strong&gt;</code></td><td>Importance</td></tr>
+      <tr><td><code>&lt;em&gt;</code></td><td>Emphasis</td></tr>
+      <tr><td><code>&lt;mark&gt;</code></td><td>Highlight</td></tr>
+      <tr><td><code>&lt;del&gt;</code> / <code>&lt;ins&gt;</code></td><td>Removed / added text</td></tr>
+      <tr><td><code>&lt;br&gt;</code></td><td>Line break</td></tr>
+      <tr><td><code>&lt;hr&gt;</code></td><td>Horizontal line</td></tr>
+    </table>
+
+    <h2>Hyperlinks (Absolute vs Relative)</h2>
+    <table>
+      <tr><th>Type</th><th>Example</th><th>Meaning</th></tr>
+      <tr><td>Absolute</td><td><code>&lt;a href="https://example.com"&gt;</code></td><td>Full web address</td></tr>
+      <tr><td>Relative</td><td><code>&lt;a href="about.html"&gt;</code></td><td>Path inside the same website</td></tr>
+      <tr><td>Fragment</td><td><code>&lt;a href="#contact"&gt;</code></td><td>Jumps to a place in the same page</td></tr>
+    </table>
+    <p>Hyperlinks are like roads between pages.</p>
+
+    <h2>Images</h2>
+    <p>An image needs a source and a description: <code>&lt;img src="student.jpg" alt="Student studying" width="400"&gt;</code></p>
+    <ul>
+      <li><b>src:</b> where the image comes from.</li>
+      <li><b>alt:</b> text alternative for accessibility.</li>
+      <li><b>width:</b> display width.</li>
+    </ul>
+
+    <h2>Media (Audio and Video)</h2>
+    <p>HTML5 plays audio and video without third-party plugins like Flash.</p>
+    <ul>
+      <li><code>&lt;audio controls&gt;</code> with a <code>&lt;source src="lecture.mp3" type="audio/mpeg"&gt;</code></li>
+      <li><code>&lt;video controls width="480"&gt;</code> with a <code>&lt;source src="demo.mp4" type="video/mp4"&gt;</code></li>
+    </ul>
+    <p class="tip">Captions and transcripts make teaching media more inclusive.</p>
+
+    <h2>Lists</h2>
+    <ul>
+      <li><b>ul:</b> unordered list (bullets)</li>
+      <li><b>ol:</b> ordered list (numbers)</li>
+      <li><b>li:</b> list item</li>
+      <li><b>Description list:</b> <code>&lt;dl&gt;</code> holds terms <code>&lt;dt&gt;</code> and their definitions <code>&lt;dd&gt;</code>, used for a glossary or dictionary.</li>
+    </ul>
+
+    <h2>Tables</h2>
+    <p>Tables are for data with relationships: <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code> (row), <code>&lt;th&gt;</code> (heading cell) and <code>&lt;td&gt;</code> (data cell).</p>
+    <h3>Regions of a Professional Table</h3>
+    <ul>
+      <li><b>caption:</b> what the table is about.</li>
+      <li><b>thead:</b> column or row headers.</li>
+      <li><b>tbody:</b> the main data.</li>
+      <li><b>tfoot:</b> summary or totals.</li>
+    </ul>
+    <h3>Table Attributes</h3>
+    <ul>
+      <li><b>border:</b> adds a border around the table and cells.</li>
+      <li><b>cellpadding:</b> space inside the cells.</li>
+      <li><b>cellspacing:</b> space between the cells.</li>
+    </ul>
+    <h3>Colspan vs Rowspan</h3>
+    <p><code>colspan</code> merges cells across columns and <code>rowspan</code> merges cells across rows.</p>
+    <p class="tip">Do not use tables just to create page layout. Use CSS layout for that.</p>
+
+    <h2>HTML5: New Elements, Attributes and Browser Support</h2>
+    <h3>Key Features of HTML5</h3>
+    <ul>
+      <li><b>Responsive design:</b> the layout adjusts to the screen size.</li>
+      <li><b>Viewport meta tag:</b> makes the website scale correctly on different screens.</li>
+      <li><b>Flexible multimedia:</b> native video and audio.</li>
+      <li><b>Cross-platform compatibility:</b> features like <code>&lt;canvas&gt;</code> work on many devices.</li>
+      <li><b>Forms and input types:</b> new types like email, tel and date. A tel input brings up a numeric keypad on a smartphone.</li>
+      <li><b>Offline support:</b> localStorage and service workers let web apps work without internet.</li>
+    </ul>
+    <h3>The canvas Element</h3>
+    <p>Used for drawing graphics, animations or games using JavaScript. It supports 2D, and 3D through WebGL.</p>
+    <h3>HTML5 Storage Options</h3>
+    <ul>
+      <li><b>localStorage:</b> stores data with no expiration date.</li>
+      <li><b>sessionStorage:</b> stores data for the session duration.</li>
+    </ul>
+    <h3>Browser Compatibility and Support</h3>
+    <p>HTML5 is widely supported in modern browsers. Semantic elements, audio, video and canvas work across Chrome, Firefox, Safari and Edge.</p>
 
     <nav class="nav">
       <a href="main.html">Home</a> |

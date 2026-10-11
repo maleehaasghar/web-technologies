@@ -9,19 +9,37 @@
 <body>
   <header class="top small">
     <h1>Lecture 7: CSS Positioning and Stacking</h1>
+    <p class="sub">Placing elements exactly where you want</p>
   </header>
 
   <main class="card">
     <h2>Summary</h2>
-    <p>This lecture explains how elements are placed on a page using different position values. It also covers z-index for stacking and floats with common layout problems.</p>
+    <p>This lecture explains how elements are placed on a page. It covers normal document flow, the position values (static, relative, absolute, fixed, sticky), offset properties and the containing block, z-index and stacking contexts, and floats with their common layout pitfalls.</p>
 
-    <h2>Topics Covered</h2>
+    <h2>Normal Document Flow and Static Positioning</h2>
+    <p>By default every element has <b>position: static</b>. Block elements stack from top to bottom and inline elements flow from left to right. Offset properties (top, left, etc.) do not work on static elements.</p>
+
+    <h2>Position Values</h2>
+    <table>
+      <tr><th>Value</th><th>Behaviour</th></tr>
+      <tr><td>static</td><td>Default, follows normal flow</td></tr>
+      <tr><td>relative</td><td>Moves from its own normal place, the space is kept</td></tr>
+      <tr><td>absolute</td><td>Removed from the flow, placed relative to the nearest positioned parent</td></tr>
+      <tr><td>fixed</td><td>Placed relative to the screen, stays when scrolling</td></tr>
+      <tr><td>sticky</td><td>Normal at first, then sticks at a set position while scrolling</td></tr>
+    </table>
+
+    <h2>Offset Properties and the Containing Block</h2>
+    <p><b>top, right, bottom, left</b> are offset properties. An absolute element is positioned inside its <b>containing block</b>, which is the nearest ancestor with a position other than static. That is why a parent is given <b>position: relative</b>.</p>
+
+    <h2>z-index and Stacking Contexts</h2>
+    <p>When elements overlap, <b>z-index</b> decides which one is on top. A bigger number appears above a smaller one. z-index works only on positioned elements. A <b>stacking context</b> is a group of elements stacked together, so z-index values are compared inside their own group.</p>
+
+    <h2>Floats, Clearing and Common Layout Pitfalls</h2>
     <ul>
-      <li>Normal document flow and static positioning</li>
-      <li>relative, absolute, fixed and sticky positioning</li>
-      <li>Offset properties and the containing block</li>
-      <li>z-index and stacking contexts</li>
-      <li>Floats, clearing and common layout pitfalls</li>
+      <li><b>float:</b> pushes an element to the left or right and text wraps around it.</li>
+      <li><b>clear:</b> stops an element from wrapping beside a float.</li>
+      <li><b>Pitfall:</b> a parent can collapse to zero height when all its children are floated. A clearfix fixes it.</li>
     </ul>
 
     <nav class="nav">

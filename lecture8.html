@@ -9,22 +9,44 @@
 <body>
   <header class="top small">
     <h1>Lecture 8: CSS3 Features</h1>
+    <p class="sub">Modern effects and animations</p>
   </header>
 
   <main class="card">
     <h2>Summary</h2>
-    <p>This lecture covers modern CSS3 features like rounded corners, gradients, shadows, transforms and animations. It also introduces web fonts, CSS variables and media queries.</p>
+    <p>This lecture covers modern CSS3 features: rounded corners, gradients, shadows and opacity, 2D/3D transforms, transitions and keyframe animations, web fonts and icon fonts, CSS custom properties (variables), media and feature queries, and vendor prefixes for cross-browser compatibility.</p>
 
-    <h2>Topics Covered</h2>
+    <h2>Rounded Corners, Gradients, Shadows and Opacity</h2>
     <ul>
-      <li>Rounded corners, gradients, shadows and opacity</li>
-      <li>2D/3D transforms</li>
-      <li>Transitions and keyframe animations</li>
-      <li>Web fonts and icon fonts</li>
-      <li>CSS custom properties (variables)</li>
-      <li>Media and feature queries</li>
-      <li>Vendor prefixes and cross-browser compatibility</li>
+      <li><b>border-radius:</b> makes corners round.</li>
+      <li><b>linear-gradient():</b> smooth mix of two or more colours.</li>
+      <li><b>box-shadow:</b> shadow around a box (x, y, blur, colour).</li>
+      <li><b>opacity:</b> transparency from 0 (invisible) to 1 (solid).</li>
     </ul>
+
+    <h2>2D / 3D Transforms</h2>
+    <p>The <b>transform</b> property changes an element without affecting the layout: translate (move), rotate, scale (resize) and skew (tilt). 3D transforms add depth with rotateX, rotateY and perspective.</p>
+
+    <h2>Transitions and Keyframe Animations</h2>
+    <table>
+      <tr><th>Transition</th><th>Animation</th></tr>
+      <tr><td>Smooth change between two states</td><td>Runs by itself using @keyframes</td></tr>
+      <tr><td>Needs a trigger such as hover</td><td>Can repeat and loop with no trigger</td></tr>
+      <tr><td>transition: transform 0.3s</td><td>animation: fade 2s infinite</td></tr>
+    </table>
+
+    <h2>Web Fonts, Icon Fonts and CSS Variables</h2>
+    <ul>
+      <li><b>Web fonts:</b> fonts loaded from the internet using @font-face or Google Fonts.</li>
+      <li><b>Icon fonts:</b> icons that behave like text, so they can be resized and coloured with CSS.</li>
+      <li><b>Custom properties (variables):</b> defined as --name: value and used as var(--name).</li>
+    </ul>
+
+    <h2>Media and Feature Queries</h2>
+    <p><b>@media</b> applies CSS only when a condition is true, such as a screen width below 600px. <b>@supports</b> (feature query) applies CSS only if the browser supports a feature.</p>
+
+    <h2>Vendor Prefixes and Cross-browser Compatibility</h2>
+    <p>Browsers used prefixes for new features: -webkit- (Chrome, Safari), -moz- (Firefox) and -ms- (old Edge). They helped new properties work in all browsers, and testing in different browsers is still important.</p>
 
     <nav class="nav">
       <a href="main.html">Home</a> |

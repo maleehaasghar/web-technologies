@@ -9,21 +9,49 @@
 <body>
   <header class="top small">
     <h1>Lecture 6: CSS Box Model</h1>
+    <p class="sub">Spacing, borders and sizing</p>
   </header>
 
   <main class="card">
     <h2>Summary</h2>
-    <p>This lecture explains that every element is a box made of content, padding, border and margin. It also covers box-sizing, overflow and the display property.</p>
+    <p>This lecture explains that every HTML element is a rectangular box made of content, padding, border and margin. It also covers margin collapsing, box-sizing, size limits, overflow, the display property, and borders, shadows and spacing techniques.</p>
 
-    <h2>Topics Covered</h2>
+    <h2>The Box Model</h2>
     <ul>
-      <li>Content, padding, border and margin</li>
-      <li>Margin collapsing</li>
-      <li>box-sizing: content-box vs border-box</li>
-      <li>width, height, min/max and overflow</li>
-      <li>display: block, inline, inline-block, none</li>
-      <li>Borders, shadows and spacing techniques</li>
+      <li><b>Content:</b> the text or image itself.</li>
+      <li><b>Padding:</b> space between content and border (inside).</li>
+      <li><b>Border:</b> line around the padding.</li>
+      <li><b>Margin:</b> space outside the border, between elements.</li>
     </ul>
+
+    <h3>Margin Collapsing</h3>
+    <p>When the vertical margins of two elements touch, they do not add up. The larger margin is used instead.</p>
+
+    <h2>box-sizing</h2>
+    <table>
+      <tr><th>content-box (default)</th><th>border-box</th></tr>
+      <tr><td>Width is only the content. Padding and border are added outside.</td><td>Width includes content, padding and border.</td></tr>
+      <tr><td>Box becomes bigger than the width set</td><td>Box stays exactly the width set</td></tr>
+    </table>
+
+    <h2>Size Constraints and Overflow</h2>
+    <ul>
+      <li><b>width / height:</b> size of the content box.</li>
+      <li><b>min-width / max-width:</b> smallest and largest allowed width.</li>
+      <li><b>overflow:</b> what happens when content is bigger than the box: visible, hidden, scroll or auto.</li>
+    </ul>
+
+    <h2>The display Property</h2>
+    <table>
+      <tr><th>Value</th><th>Behaviour</th></tr>
+      <tr><td>block</td><td>Starts on a new line, takes full width</td></tr>
+      <tr><td>inline</td><td>Stays in the line, width and height do not apply</td></tr>
+      <tr><td>inline-block</td><td>Stays in the line but accepts width and height</td></tr>
+      <tr><td>none</td><td>Element is completely hidden</td></tr>
+    </table>
+
+    <h2>Borders, Shadows and Spacing Techniques</h2>
+    <p>border sets the line, box-shadow adds a shadow, and using consistent padding and margin values keeps the design neat.</p>
 
     <nav class="nav">
       <a href="main.html">Home</a> |

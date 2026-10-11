@@ -9,19 +9,142 @@
 <body>
   <header class="top small">
     <h1>Lecture 4: Semantic HTML and Forms</h1>
+    <p class="sub">Meaningful structure and user input</p>
   </header>
 
   <main class="card">
     <h2>Summary</h2>
-    <p>This lecture explains block and inline elements and semantic tags that give meaning to a page. It also covers forms, input types and HTML5 validation.</p>
+    <p>This lecture explains block-level and inline elements, div and span, and semantic elements that give meaning to a page, with their accessibility and SEO benefits. It also covers forms (action, method, input types, select, textarea and button) and the HTML5 client-side validation attributes required, pattern, min and max.</p>
 
-    <h2>Topics Covered</h2>
+    <h2>Block-level Elements</h2>
+    <p>Block-level elements create a line break before and after them and take up the full width available. Examples: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;table&gt;</code>.</p>
+
+    <h2>Inline Elements</h2>
+    <p>Inline elements fit within block elements. They do not start on a new line and take only as much width as necessary. Examples: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>.</p>
+
+    <h2>Block vs Inline Elements</h2>
+    <table>
+      <tr><th>Block elements</th><th>Inline elements</th></tr>
+      <tr><td>Start on a new line</td><td>Stay on the same line</td></tr>
+      <tr><td>Take the full width</td><td>Take only the space they need</td></tr>
+      <tr><td>Can contain other block or inline elements</td><td>Can only contain inline elements</td></tr>
+    </table>
+
+    <h3>Content Model Categories</h3>
+    <p>The content model answers the question: what content is allowed within a particular container? Block elements belong to the flow category and inline elements to the phrasing category.</p>
+
+    <h2>div and span</h2>
+    <p><b>div</b> and <b>span</b> are generic containers. <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code> and <code>&lt;section&gt;</code> usually form larger blocks, while <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code> and <code>&lt;strong&gt;</code> usually sit within text.</p>
+
+    <h3>Layout Design with Tables</h3>
+    <p>Early web layouts used tables (thead, tbody, tfoot) to divide the page into a header, content and footer.</p>
+    <h3>Div for Layout</h3>
+    <p><code>&lt;div&gt;</code> is now the preferred method for creating page sections, for example a container div with a header div, a main-content div and a footer div inside it.</p>
+    <h3>Nesting Divs</h3>
+    <p>Div elements can be nested inside each other for more complex layouts, for example a container with a left section and a right section.</p>
+    <h3>Importance of Using Div for Layout</h3>
     <ul>
-      <li>Block-level vs inline elements, div and span</li>
-      <li>Semantic elements: header, nav, main, section, article, aside, footer</li>
-      <li>Accessibility and SEO benefits</li>
-      <li>Forms: action, method, input types, select, textarea, button</li>
-      <li>Validation: required, pattern, min, max</li>
+      <li>More flexible and accessible than tables.</li>
+      <li>Works well with modern web design practices.</li>
+      <li>Easy to style using CSS.</li>
+    </ul>
+    <h3>Layout Best Practices</h3>
+    <ul>
+      <li>Use div for block-level content or sections.</li>
+      <li>Use span for inline text or small elements within other content.</li>
+      <li>Avoid using tables for layout, as it is less responsive and harder to maintain.</li>
+      <li>Tables should be reserved for tabular data (spreadsheets, data tables).</li>
+    </ul>
+
+    <h2>Semantic Elements</h2>
+    <p><b>Non-semantic</b> elements (div, span) tell nothing about their content. <b>Semantic</b> elements (form, table, article, nav, aside) clearly define their content.</p>
+    <table>
+      <tr><th>Element</th><th>Purpose</th></tr>
+      <tr><td>header</td><td>Intro or branding</td></tr>
+      <tr><td>nav</td><td>Navigation links</td></tr>
+      <tr><td>main</td><td>Dominant content of the page</td></tr>
+      <tr><td>section</td><td>Thematic group of content</td></tr>
+      <tr><td>article</td><td>Self-contained item</td></tr>
+      <tr><td>aside</td><td>Related (side) content</td></tr>
+      <tr><td>footer</td><td>Ending information</td></tr>
+    </table>
+    <p class="tip">Memory trick: think of a newspaper: header, menu, main story, side notes, footer.</p>
+    <h3>Accessibility and SEO Benefits</h3>
+    <p>When meaning is explicit, accessibility, maintainability and machine-readable structure improve. Screen readers understand the page better and search engines rank the content more accurately.</p>
+
+    <h2>Forms</h2>
+    <p>Forms turn a page into an interaction. The <code>&lt;form&gt;</code> tag is the container for all form elements and defines a form for collecting user input.</p>
+    <h3>action and method</h3>
+    <ul>
+      <li><b>action:</b> the URL that receives the submitted data. If it is omitted, the action is the current page.</li>
+      <li><b>method:</b> the HTTP method used to send data.</li>
+      <li><b>GET:</b> data is sent through the URL (suitable for small data), e.g. /search?q=html.</li>
+      <li><b>POST:</b> data is sent in the request body (for secure and large data).</li>
+      <li><b>target="_blank":</b> the response is displayed in a new window or tab.</li>
+    </ul>
+    <h3>The label Element</h3>
+    <p>A label associates text with a form control. Clicking the label focuses the matching input. The <code>for</code> attribute of the label must match the <code>id</code> of the input.</p>
+    <h3>The input Element</h3>
+    <p>The most versatile element for collecting user input. Choose the type that matches the data:</p>
+    <table>
+      <tr><th>Type</th><th>Used for</th></tr>
+      <tr><td>text</td><td>Name</td></tr>
+      <tr><td>email</td><td>Email</td></tr>
+      <tr><td>password</td><td>Password</td></tr>
+      <tr><td>number</td><td>Marks</td></tr>
+      <tr><td>date</td><td>Date of birth</td></tr>
+      <tr><td>checkbox</td><td>Skills (many choices)</td></tr>
+      <tr><td>radio</td><td>Gender (one choice)</td></tr>
+      <tr><td>file</td><td>Document</td></tr>
+    </table>
+    <h3>select, textarea and button</h3>
+    <ul>
+      <li><b>select:</b> dropdown selection.</li>
+      <li><b>textarea:</b> multi-line input.</li>
+      <li><b>button:</b> submit, reset or action button.</li>
+    </ul>
+    <h3>fieldset and legend</h3>
+    <p>Group related controls together with <code>&lt;fieldset&gt;</code> and give the group a title with <code>&lt;legend&gt;</code>. Radio buttons with the same <code>name</code> form one group.</p>
+    <h3>placeholder, name and value</h3>
+    <ul>
+      <li><b>placeholder:</b> a hint of the expected value. It disappears when the user starts typing.</li>
+      <li><b>name:</b> identifies the field when data is submitted to the server. Each field should have a unique name.</li>
+      <li><b>value:</b> sets the default value of a field and is sent to the server on submit.</li>
+    </ul>
+    <h3>Form Submission Process</h3>
+    <p>When a user submits a form, the browser sends the data to the server. The data is collected and sent using the name and value attributes of the input fields.</p>
+
+    <h2>HTML5 Client-side Validation</h2>
+    <table>
+      <tr><th>Attribute</th><th>Meaning</th></tr>
+      <tr><td>required</td><td>This field cannot be empty. The browser reports a validation error.</td></tr>
+      <tr><td>pattern</td><td>The format must match a rule, e.g. <code>SP[0-9]{2}-BSSE-[0-9]{3}</code> accepts SP24-BSSE-001 and rejects SP24-BSSE-01</td></tr>
+      <tr><td>min / max</td><td>Numeric boundaries, e.g. min="0" max="100" accepts 85 and rejects 105</td></tr>
+    </table>
+    <p class="tip">Client validation is helpful (fast feedback), but server validation is essential. Golden rule: client = convenience, server = authority.</p>
+
+    <h2>Accessible HTML</h2>
+    <ul>
+      <li>Use meaningful alt text for informative images.</li>
+      <li>Connect <code>&lt;label for="id"&gt;</code> to the matching control.</li>
+      <li>Use fieldset and legend for related controls.</li>
+      <li>Make instructions and validation messages understandable.</li>
+    </ul>
+
+    <h2>HTML5 Is More Than a Logo</h2>
+    <ul>
+      <li><b>Semantic:</b> header, nav, main, section, article, aside, footer.</li>
+      <li><b>Media:</b> audio, video.</li>
+      <li><b>Forms:</b> email, date, number and built-in constraints.</li>
+      <li><b>Modern standard:</b> HTML is continuously developed; the Living Standard is current.</li>
+    </ul>
+
+    <h2>HTML5 and CSS Coding-Style Conventions</h2>
+    <ul>
+      <li>For every container element include both a start tag and an end tag.</li>
+      <li>Use lowercase for all tag names and attributes.</li>
+      <li>Use lowercase for attribute values unless there is a reason for uppercase.</li>
+      <li>Surround attribute values with quotes and omit spaces around the equals sign.</li>
     </ul>
 
     <nav class="nav">

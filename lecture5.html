@@ -9,21 +9,50 @@
 <body>
   <header class="top small">
     <h1>Lecture 5: CSS Syntax and Selectors</h1>
+    <p class="sub">Styling and choosing elements</p>
   </header>
 
   <main class="card">
     <h2>Summary</h2>
-    <p>This lecture introduces CSS syntax and the three ways to add CSS. It covers selectors, pseudo-classes, the cascade, specificity and basic text and color properties.</p>
+    <p>This lecture introduces CSS syntax and the three ways to add CSS. It covers selectors, pseudo-classes and pseudo-elements, how the cascade, specificity and inheritance decide which rule is applied, and the basic colour, font, text and background properties.</p>
 
-    <h2>Topics Covered</h2>
+    <h2>CSS Syntax</h2>
+    <p>A CSS rule has a <b>selector</b> and a <b>declaration block</b>. Each declaration is a <b>property: value;</b> pair.</p>
+    <pre><code>p { color: red; font-size: 18px; }</code></pre>
+
+    <h2>Inline, Internal and External Style Sheets</h2>
+    <table>
+      <tr><th>Type</th><th>Where</th><th>Use</th></tr>
+      <tr><td>Inline</td><td>style attribute inside a tag</td><td>One single element</td></tr>
+      <tr><td>Internal</td><td>style tag in the head</td><td>One single page</td></tr>
+      <tr><td>External</td><td>separate .css file linked with link tag</td><td>Many pages (best practice)</td></tr>
+    </table>
+
+    <h2>Selectors</h2>
     <ul>
-      <li>CSS syntax</li>
-      <li>Inline, internal and external style sheets</li>
-      <li>Selectors: element, class, id, attribute, grouping, descendant</li>
-      <li>Pseudo-classes and pseudo-elements</li>
-      <li>Cascade, specificity and inheritance</li>
-      <li>Colour, font, text and background properties</li>
+      <li><b>Element:</b> p, h1 (all such tags)</li>
+      <li><b>Class:</b> .note (many elements)</li>
+      <li><b>Id:</b> #title (one element)</li>
+      <li><b>Attribute:</b> input[type="text"]</li>
+      <li><b>Grouping:</b> h4, h5 (same style for both)</li>
+      <li><b>Descendant:</b> .box p (p inside .box)</li>
     </ul>
+
+    <h2>Pseudo-classes and Pseudo-elements</h2>
+    <ul>
+      <li><b>Pseudo-class</b> styles a state, e.g. :hover.</li>
+      <li><b>Pseudo-element</b> styles a part of an element, e.g. ::first-letter.</li>
+    </ul>
+
+    <h2>Cascade, Specificity and Inheritance</h2>
+    <ul>
+      <li><b>Cascade:</b> when rules conflict, the later one wins.</li>
+      <li><b>Specificity:</b> id is stronger than class, class is stronger than element.</li>
+      <li><b>Inheritance:</b> some properties (like color and font) pass from parent to child.</li>
+    </ul>
+
+    <h2>Colour, Font, Text and Background Properties</h2>
+    <p>color, background-color, font-family, font-size, font-weight, text-align, text-decoration, line-height, background-image.</p>
 
     <nav class="nav">
       <a href="main.html">Home</a> |
