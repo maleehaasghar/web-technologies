@@ -9,21 +9,58 @@
 <body>
   <header class="top small">
     <h1>Lecture 2: Web Architecture: Tiers and Layers</h1>
+    <p class="sub">How applications are organized</p>
   </header>
 
   <main class="card">
     <h2>Summary</h2>
-    <p>This lecture explains tiers and layers and why separation of concerns is important. It compares one-tier, two-tier and three-tier architectures.</p>
+    <p>This lecture explains the difference between tiers and layers and why separation of concerns is important. It compares one-tier, two-tier and three-tier (N-tier) architectures with their advantages and limitations, and shows how to choose the right architecture.</p>
 
-    <h2>Topics Covered</h2>
+    <h2>Tiers vs Layers</h2>
+    <table>
+      <tr><th>Layer</th><th>Tier</th></tr>
+      <tr><td>Logical division of code</td><td>Physical separation (different machines)</td></tr>
+      <tr><td>Can run on the same machine</td><td>Runs on separate servers or devices</td></tr>
+      <tr><td>Example: UI layer, logic layer</td><td>Example: client, app server, database server</td></tr>
+    </table>
+
+    <h2>Separation of Concerns</h2>
+    <p>Every part of an application should do one job only. For example, the interface shows data, the logic processes it, and the database stores it. This makes the code easier to read, test and change.</p>
+
+    <h2>One-Tier (Standalone) Architecture</h2>
+    <p>Everything (interface, logic and data) is on a single computer. No network is needed.</p>
+    <p class="note">Examples: Notepad, MS Word, a calculator, an offline game.</p>
+
+    <h2>Two-Tier (Client-Server) Architecture</h2>
+    <p>The client (interface and logic) talks directly to a server (usually the database).</p>
+    <h3>Advantages</h3>
     <ul>
-      <li>Tiers vs layers</li>
-      <li>Separation of concerns</li>
-      <li>One-tier (standalone) architecture</li>
-      <li>Two-tier (client-server): advantages and limitations</li>
-      <li>Three-tier / N-tier architecture</li>
-      <li>Choosing: scalability, maintainability, cost</li>
+      <li>Simple and quick to build</li>
+      <li>Data is stored centrally</li>
+      <li>Good for small applications</li>
     </ul>
+    <h3>Limitations</h3>
+    <ul>
+      <li>Hard to scale when users increase</li>
+      <li>Logic sits on the client, so updates need to reach every client</li>
+      <li>Less secure because the client talks directly to the database</li>
+    </ul>
+
+    <h2>Three-Tier / N-Tier Architecture</h2>
+    <ul>
+      <li><b>Presentation tier:</b> what the user sees (browser).</li>
+      <li><b>Logic (application) tier:</b> processes the rules.</li>
+      <li><b>Data tier:</b> database that stores information.</li>
+    </ul>
+    <p>N-tier adds more tiers (for example caching or an API tier) when the system is larger.</p>
+
+    <h2>Selecting an Architecture (Trade-offs)</h2>
+    <table>
+      <tr><th>Factor</th><th>What to think about</th></tr>
+      <tr><td>Scalability</td><td>Can it handle more users? Three-tier scales best.</td></tr>
+      <tr><td>Maintainability</td><td>Is it easy to change one part without breaking the rest?</td></tr>
+      <tr><td>Cost</td><td>More tiers mean more servers and effort.</td></tr>
+    </table>
 
     <nav class="nav">
       <a href="main.html">Home</a> |

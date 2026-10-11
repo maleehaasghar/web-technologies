@@ -1,4 +1,4 @@
-/* ---------- Colors (yahan se theme change karo) ---------- */
+
 :root {
   --dark: #0f4c5c;
   --light-bg: #f6f1e7;
@@ -6,7 +6,7 @@
   --text: #25313a;
 }
 
-/* ---------- Basic page ---------- */
+
 * { box-sizing: border-box; }
 
 body {
@@ -17,7 +17,6 @@ body {
   line-height: 1.7;
 }
 
-/* ---------- Header ---------- */
 .top {
   background: var(--dark);
   color: white;
@@ -39,7 +38,6 @@ body {
 }
 .top .sub { margin: 8px 0 0; font-style: italic; opacity: 0.85; }
 
-/* ---------- Main white card ---------- */
 .card {
   max-width: 800px;
   margin: -20px auto 40px;
@@ -58,7 +56,7 @@ body {
 .card h2:first-child { margin-top: 0; }
 .intro { text-align: center; font-style: italic; }
 
-/* ---------- Table ---------- */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -86,7 +84,7 @@ tr:hover td { background: #fdecc8; }
 }
 .view:hover { background: var(--dark); color: white; }
 
-/* ---------- Lecture page ---------- */
+
 .topics > li { font-weight: bold; margin-top: 8px; }
 .topics ul li { font-weight: normal; }
 
@@ -106,7 +104,7 @@ pre {
   background: #fffdf8;
 }
 
-/* ---------- Bottom navigation ---------- */
+
 .nav {
   margin-top: 35px;
   padding-top: 15px;
@@ -114,12 +112,20 @@ pre {
   text-align: center;
   font-family: Arial, sans-serif;
 }
+
+.card h3 { color: var(--dark); font-size: 1.1rem; margin: 22px 0 4px; }
+
+.note {
+  background: #fdf3dc;
+  border-left: 5px solid var(--accent);
+  padding: 10px 15px;
+  border-radius: 6px;
+}
 .nav a { color: var(--dark); font-weight: bold; text-decoration: none; margin: 0 8px; }
 .nav a:hover { color: var(--accent); text-decoration: underline; }
 
 footer { text-align: center; padding: 20px; font-size: 0.9rem; opacity: 0.7; }
 
-/* ---------- Mobile screens ---------- */
 @media (max-width: 600px) {
   .top h1 { font-size: 1.8rem; }
   .card { margin: -15px 12px 30px; padding: 20px; }
